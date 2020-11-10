@@ -63,11 +63,10 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
+    x, y = clean_data(ds)
 
-	x, y = clean_data(ds)
-
-	# TODO: Split data into train and test sets.
-	x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2,random_state=0)
+    # TODO: Split data into train and test sets.
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2,random_state=0)
 
 
     # Train Logistic Regression Model
@@ -78,8 +77,8 @@ def main():
     run.log("Accuracy", np.float(Accuracy))
 
     # Save the trained model
-	os.makedirs('outputs', exist_ok=True)
-	joblib.dump(value=model, filename='outputs/model.joblib')
+    os.makedirs('outputs', exist_ok=True)
+    joblib.dump(value=model, filename='outputs/model.joblib')
 
 if __name__ == '__main__':
     main()
