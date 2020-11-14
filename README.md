@@ -272,4 +272,4 @@ Some of the ways you can handle imbalanced data:
 <img src="AutoML Capture/Capture10(Computer cluster delete).PNG">
 
 ### Citation
-![](https://docs.microsoft.com/)
+[https://docs.microsoft.com/](https://docs.microsoft.com/)
