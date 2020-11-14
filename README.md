@@ -114,7 +114,7 @@ Submit your hyperdrive run to the experiment and show run details with the widge
 ```
     hyperdrive_run = exp.submit(config=hyperdrive_config)
 ```
-![](/Hyperdrive Capture/Capture1.PNG)
+![](Hyperdrive Capture/Capture1.PNG)
 
 * Get the best run and metric
 ```
