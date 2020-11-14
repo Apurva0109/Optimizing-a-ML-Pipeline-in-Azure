@@ -68,7 +68,7 @@ Steps performed in the udacity-project.ipynb for hyperparameter tuning are:
 ```
     ps = RandomParameterSampling(param_space)
 ```
-   
+ 
 
 * Early termination policy: To help prevent wasting time, you can set an early termination policy that abandons runs that are unlikely to produce a better result than previously completed runs.<br>
 Bandit policy stops a run if the target performance metric underperforms the best run so far by a specified margin. It is based on slack criteria and a frequency and delay interval for evaluation.
@@ -96,8 +96,9 @@ HyperDriveConfig is created using the estimator, hyperparameter sampler, and ear
                                 PrimaryMetricGoal.MAXIMIZE,
                                 max_total_runs=12,
                                 max_concurrent_runs=4)
-
 ```
+<br>
+
     primary primary_metric_name: The name of the primary metric reported by the experiment runs.
 
     primary_metric_goal: Either PrimaryMetricGoal.MINIMIZE or PrimaryMetricGoal.MAXIMIZE. This parameter determines if the 
@@ -110,7 +111,8 @@ Submit your hyperdrive run to the experiment and show run details with the widge
 ```
     hyperdrive_run = exp.submit(config=hyperdrive_config)
 ```
-<img scr="Hyperdrive Capture/Capture1.PNG">
+<img src="Hyperdrive Capture/Capture1.PNG">
+<img src="Hyperdrive Capture/Capture2.PNG">
 
 * Get the best run and metric
 ```
@@ -118,7 +120,6 @@ Submit your hyperdrive run to the experiment and show run details with the widge
     best_run_metrics=best_run.get_metrics()
 ```
 
-<img scr="Hyperdrive Capture/Capture2.PNG">
 
 ## AutoML
 
@@ -154,6 +155,8 @@ It represents the configuration for submitting an autoML experiment and contains
         max_cores_per_iteration=-1,
         max_concurrent_iterations=10)
 ```
+<br>
+    
     experiment_timeout_minutes: Time limit in minutes for the experiment.
 
     primary_metric: Metric that you want to optimize. The best-fit model will be chosen based on this metric.
@@ -173,16 +176,14 @@ It represents the configuration for submitting an autoML experiment and contains
     automl_run = exp.submit(automl_config, show_output=True)
     RunDetails(automl_run).show()
 ```
+<img src="AutoML Capture/Capture1.PNG">
 
 * Get the best run and metric
 
 ```
     best_run, fitted_automl_best_model = automl_run.get_output()
     best_run_metrics = best_run.get_metrics()
-
 ```
-<img scr="AutoML Capture/Capture1.PNG">
-
 Different types of algorithms supported for classification in Azure ML are:
 
 * Logistic Regression
@@ -215,38 +216,38 @@ Accuracy score obtained by two approaches:
 
 * HyperDrive &ensp;: 0.91624
 
-<img scr="Hyperdrive Capture/Capture3.PNG">
+<img src="Hyperdrive Capture/Capture5.PNG">
 
 For Hyperdrive best values for hyperparameter chosen are:
 
 * C: 0.66929
 * max_iter: 60
 
-<img scr="Hyperdrive Capture/Capture6.PNG">
+<img src="Hyperdrive Capture/Capture6.PNG">
 
 * AutoML &ensp;&ensp;&ensp;&ensp;: 0.91567 (best model: VotingEnsemble)
 
 
-<img scr="AutoML Capture/Capture1.PNG">
+<img src="AutoML Capture/Capture1.PNG">
 
 There is no significant difference in accuracy between the two approaches. Though AutoML is a powerful tool for prediction, here Hyperdrive outperforms AutoML. 
 
 The Accuracy of AutoML might be affected due to imbalanced data because imbalance classes were detected in input.
 The algorithms used by automated ML detect imbalance when the number of samples in the minority class is equal to or fewer than 20% of the number of samples in the majority class
 
-<img scr="AutoML Capture/Capture2.PNG">
+<img src="AutoML Capture/Capture2.PNG">
 
 Some algorithms are executed with accuracy.
 
-<img scr="AutoML Capture/Capture4.PNG">
+<img src="AutoML Capture/Capture4.PNG">
 
 Features that are impacted VotingEnsemble.
 
-<img scr="AutoML Capture/Capture5.PNG">
+<img src="AutoML Capture/Capture5.PNG">
 
-Metrics
+Some Metrics
 
-<img scr="AutoML Capture/Capture7.PNG">
+<img src="AutoML Capture/Capture7.PNG">
 
 ### Summary Results:
 
@@ -273,4 +274,4 @@ Some of the ways you can handle imbalanced data:
 
 ## Proof of cluster clean up
 
-<img scr="AutoML Capture/Capture10.PNG">
+<img src="AutoML Capture/Capture10(Computer cluster delete).PNG">
