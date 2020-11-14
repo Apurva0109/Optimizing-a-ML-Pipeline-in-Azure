@@ -34,7 +34,7 @@ Steps performed in train.py are:
 * Split the dataset using the “train_test_split” function in Scikit-learn into train and test in the ratio 80% and 20% respectively. 
 * Use the Scikit-learn model to fit the training data.
 * Compute accuracy for train data using Scikit learn model.
-* Save the model in the folder outputs/model.joblib
+* Save the model in the folder outputs/model.joblib.
 
 In this project, we used Logistic regression, a classification algorithm. It is used when the value of the target variable is categorical in nature. Logistic regression is most commonly used when the data in question has binary output, so when it belongs to one class or another, or is either a 0 or 1.
 
@@ -49,7 +49,7 @@ Tuning hyperparameter is done in the jupyter notebook *udacity-project.ipynb*.
 Steps performed in the udacity-project.ipynb for hyperparameter tuning are:
 * Define search space: Dictionary is created with the set of hyperparameter values i.e C and max_iter.
 
-    * With a smaller C value, you can specify stronger regularization. The default value is 1. 
+    * With a smaller C value, you can specify stronger regularization.
     * max_iter specifies the maximum number of iterations taken for the solvers to converge.
 
 ```
@@ -97,11 +97,11 @@ HyperDriveConfig is created using the estimator, hyperparameter sampler, and ear
                                 max_total_runs=12,
                                 max_concurrent_runs=4)
 ```
-   primary primary_metric_name: The name of the primary metric reported by the experiment runs.
+   *primary primary_metric_name*: The name of the primary metric reported by the experiment runs.
 
-   primary_metric_goal: Either PrimaryMetricGoal.MINIMIZE or PrimaryMetricGoal.MAXIMIZE. This parameter determines if the primary metric is to be minimized or maximized when evaluating runs.
+   *primary_metric_goal*: Either PrimaryMetricGoal.MINIMIZE or PrimaryMetricGoal.MAXIMIZE. This parameter determines if the primary metric is to be minimized or maximized when evaluating runs.
 
-   max_total_runs and max_concurrent_runsThe maximum total number of runs to create.The maximum number of runs to execute concurrently.
+   *max_total_runs* and *max_concurrent_runs*:The maximum total number of runs to create.The maximum number of runs to execute concurrently.
 
 * Submit experiment:
 Submit your hyperdrive run to the experiment and show run details with the widget.
@@ -130,8 +130,8 @@ Steps performed in the udacity-project.ipynb for AutoML are:
 * Prepare data: We have used *clean_data* function from the script train.py which returns features and targets as DataFrame and Series, respectively.
 * Concatenated data returned from clean_data function in Dataframe, all_data.
 * Split the data into train and test sets in the ratio 80% and 20% respectively.
-* Save the training data in the folder training/train_data.csv
-* Get the datastore and upload train_data.csv to the datastore and create datastore referencing
+* Save the training data in the folder training/train_data.csv.
+* Get the datastore and upload train_data.csv to the datastore and create datastore referencing.
 ```
     datastore = ws.get_default_datastore()
     datastore.upload(src_dir='training/', target_path='data/')
@@ -152,19 +152,19 @@ It represents the configuration for submitting an autoML experiment and contains
         max_cores_per_iteration=-1,
         max_concurrent_iterations=10)
 ```  
-   experiment_timeout_minutes: Time limit in minutes for the experiment.
+   *experiment_timeout_minutes*: Time limit in minutes for the experiment.
 
-   primary_metric: Metric that you want to optimize. The best-fit model will be chosen based on this metric.
+   *primary_metric*: Metric that you want to optimize. The best-fit model will be chosen based on this metric.
 
-   label_column_name: The name of the label column whose value your model will predict.
+   *label_column_name*: The name of the label column whose value your model will predict.
 
-   n_cross_validations: Number of cross-validation splits to perform when validation data is not specified.
+   *n_cross_validations*: Number of cross-validation splits to perform when validation data is not specified.
 
-   iterations: The total number of different algorithms and parameter combinations to test during an automated ML experiment.
+   *iterations*: The total number of different algorithms and parameter combinations to test during an automated ML experiment.
 
-   max_cores_per_iteration: The maximum number of threads to use for a given training iteration.-1, which means to use all the possible cores per iteration per child-run.
+   *max_cores_per_iteration*: The maximum number of threads to use for a given training iteration.-1, which means to use all the possible cores per iteration per child-run.
 
-   max_concurrent_iterations: Represents the maximum number of iterations that would be executed in parallel.
+   *max_concurrent_iterations*: Represents the maximum number of iterations that would be executed in parallel.
 
 * Submit AutoML experiment and show results with the RunDetails.
 ```
@@ -228,7 +228,7 @@ For Hyperdrive best values for hyperparameter chosen are:
 There is no significant difference in accuracy between the two approaches. Though AutoML is a powerful tool for prediction, here Hyperdrive outperforms AutoML. 
 
 The Accuracy of AutoML might be affected due to imbalanced data because imbalance classes were detected in input.
-The algorithms used by automated ML detect imbalance when the number of samples in the minority class is equal to or fewer than 20% of the number of samples in the majority class
+The algorithms used by automated ML detect imbalance when the number of samples in the minority class is equal to or fewer than 20% of the number of samples in the majority class.
 
 <img src="AutoML Capture/Capture2.PNG">
 
