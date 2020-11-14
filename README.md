@@ -73,8 +73,8 @@ Steps performed in the udacity-project.ipynb for hyperparameter tuning are:
 * Early termination policy: To help prevent wasting time, you can set an early termination policy that abandons runs that are unlikely to produce a better result than previously completed runs.
 <br>
 <br>
-Bandit policy stops a run if the target performance metric underperforms the best run so far by a specified margin. It is based on slack criteria and a frequency and delay interval for evaluation.
-Any run that doesn't fall within the slack factor or slack amount of the evaluation metric with respect to the best performing run will be terminated.
+   Bandit policy stops a run if the target performance metric underperforms the best run so far by a specified margin. It is based on slack criteria and a frequency and delay interval for evaluation.
+   Any run that doesn't fall within the slack factor or slack amount of the evaluation metric with respect to the best performing run will be terminated.
 
 * Use Estimator:
 We used the SKLearn estimator to run the train.py script, which automatically includes Scikit-Learn and its dependencies in the run environment.
