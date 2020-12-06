@@ -263,7 +263,7 @@ Some of the ways you can handle imbalanced data:
 * For scikit learn, try a different combination of values for hyperparameter tuning.
 * For AutoML, 
     * You can use more data to improve accuracy. 
-    * Use AUC_weighted as primary matric that calculates the contribution of every class based on the relative number of samples representing that class, hence is more robust against imbalance.
+    * Use AUC_weighted as primary matrix that calculates the contribution of every class based on the relative number of samples representing that class, hence is more robust against imbalance.
     * Use a weight column: automated ML supports a column of weights as input, causing rows in the data to be weighted up or down, which can be used to make a class more or less "important".
 
 
